@@ -23,6 +23,10 @@ def calculate_BMI(weight, height):
 def main():
     print("Welcome to the BMI Calculator!")
     try:
+        # Get user's name
+        name = input("Please enter your name: ")
+        print(f"Hello, {name}! Let's calculate your BMI.")
+        
         # Get weight input from the user
         weight = float(input("Enter your weight in kilograms (kg): "))
         
@@ -42,8 +46,12 @@ def main():
             print("You have a normal weight.")
         elif 25 <= bmi < 29.9:
             print("You are overweight.")
-        else:
+        elif 30 <= bmi < 34.9:
             print("You are obese.")
+        elif 35 <= bmi < 39.9:
+            print("You are severely obese.")
+        else:
+            print("You are morbidly obese.")
     
     # Handle invalid or non-numeric input gracefully
     except ValueError as e:
